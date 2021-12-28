@@ -73,6 +73,9 @@
             this.lvmp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmbsx = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.txbTk = new System.Windows.Forms.TextBox();
+            this.btnTk = new System.Windows.Forms.Button();
+            this.btnhienthi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,6 +147,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.groupBox1.Controls.Add(this.btnhienthi);
             this.groupBox1.Controls.Add(this.mtc);
             this.groupBox1.Controls.Add(this.btndatetime);
             this.groupBox1.Controls.Add(this.rdbGtnu);
@@ -181,7 +185,7 @@
             // 
             // mtc
             // 
-            this.mtc.Location = new System.Drawing.Point(357, 36);
+            this.mtc.Location = new System.Drawing.Point(433, -25);
             this.mtc.Name = "mtc";
             this.mtc.TabIndex = 28;
             this.mtc.Visible = false;
@@ -376,7 +380,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(462, 50);
+            this.label1.Location = new System.Drawing.Point(481, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 31);
             this.label1.TabIndex = 8;
@@ -494,11 +498,42 @@
             this.toolStrip1.TabIndex = 12;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // txbTk
+            // 
+            this.txbTk.Location = new System.Drawing.Point(337, 101);
+            this.txbTk.Multiline = true;
+            this.txbTk.Name = "txbTk";
+            this.txbTk.Size = new System.Drawing.Size(210, 29);
+            this.txbTk.TabIndex = 29;
+            // 
+            // btnTk
+            // 
+            this.btnTk.Location = new System.Drawing.Point(553, 101);
+            this.btnTk.Name = "btnTk";
+            this.btnTk.Size = new System.Drawing.Size(85, 29);
+            this.btnTk.TabIndex = 30;
+            this.btnTk.Text = "Tìm kiếm";
+            this.btnTk.UseVisualStyleBackColor = true;
+            this.btnTk.Click += new System.EventHandler(this.btnTk_Click);
+            // 
+            // btnhienthi
+            // 
+            this.btnhienthi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnhienthi.Location = new System.Drawing.Point(468, 207);
+            this.btnhienthi.Name = "btnhienthi";
+            this.btnhienthi.Size = new System.Drawing.Size(128, 30);
+            this.btnhienthi.TabIndex = 29;
+            this.btnhienthi.Text = "Hiển thị";
+            this.btnhienthi.UseVisualStyleBackColor = true;
+            this.btnhienthi.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Quản_lý_bệnh_nhân
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.btnTk);
+            this.Controls.Add(this.txbTk);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.cmbsx);
             this.Controls.Add(this.lv);
@@ -563,5 +598,8 @@
         private System.Windows.Forms.MonthCalendar mtc;
         private System.Windows.Forms.ComboBox cmbsx;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.TextBox txbTk;
+        private System.Windows.Forms.Button btnTk;
+        private System.Windows.Forms.Button btnhienthi;
     }
 }

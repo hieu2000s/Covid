@@ -54,7 +54,6 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                         hasError = true;
                 }
             }
-            
             if (!hasError)
             {
                 try
@@ -64,15 +63,20 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                     Account.Quyen = rdbndt.Checked ? true : false;
                     Account.MatKhau = txbmk.Text;
                     Account.TenNguoiNhap = txbhoten.Text;
-                    Account.Sdt = int.Parse(txbsdt.Text);
-                    Account.CMND = int.Parse(txbcmnd.Text);
+                    Account.Sdt = txbsdt.Text;
+                    Account.CMND = txbcmnd.Text;
                     db.Accounts.Add(Account);
                     db.SaveChanges();
                     hienthi();
+                    txbsdt.Text = "";
+                    txbtdn.Text = "";
+                    txbhoten.Text = "";
+                    txbcmnd.Text = "";
+                    txbmk.Text = "";
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Lỗi xảy ra", "Định dạng nhập vào không chính xác.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi xảy ra", "Định dạng nhập vào không chính xác.", MessageBoxButtons.OK, MessageBoxIcon.Error);  
                 }
                 catch (Exception ex)
                 {
@@ -107,20 +111,27 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                     Accout.Quyen = rdbndt.Checked ? false : true;
                     Accout.TenDangNhap =txbtdn.Text;
                     Accout.TenNguoiNhap = txbhoten.Text;
-                    Accout.CMND = int.Parse(txbcmnd.Text);
+                    Accout.CMND = txbcmnd.Text;
                     Accout.MatKhau = txbmk.Text;
-                    Accout.Sdt = int.Parse(txbsdt.Text);
+                    Accout.Sdt = txbsdt.Text;
                     db.Entry<Account>(Accout).State = (System.Data.Entity.EntityState)EntityState.Modified;
                     db.SaveChanges();
                     hienthi();
+                    txbsdt.Text = "";
+                    txbtdn.Text = "";
+                    txbhoten.Text = "";
+                    txbcmnd.Text = "";
+                    txbmk.Text = "";
                 }
                 catch (FormatException)
                 {
                     MessageBox.Show("Lỗi xảy ra", "Định dạng nhập vào không chính xác.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Lỗi xảy ra", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
 
             }
@@ -173,6 +184,11 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                 txbhoten.Text = lvi.SubItems[4].Text;
                 txbcmnd.Text = lvi.SubItems[5].Text;
                 txbsdt.Text = lvi.SubItems[6].Text;
+
+                var id = lv.SelectedItems[0].SubItems[1].Text;
+                var accout = db.Accounts.FirstOrDefault(x => x.TenDangNhap.Equals(id.ToString()));
+
+
             }
             else
             {

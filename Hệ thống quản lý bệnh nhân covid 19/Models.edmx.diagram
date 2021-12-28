@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cd0da1261ed24891a92c9baa8ced62fb" Name="Diagram1">
-        <EntityTypeShape EntityType="QuanLyCovidModel.Account" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCovidModel.BenhNhan" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCovidModel.KhuVucDieuTri" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCovidModel.LichSuDieuTri" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCovidModel.NguoiDieuTri" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCovidModel.PhongDieuTri" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
-        <AssociationConnector Association="QuanLyCovidModel.FK__BenhNhan__IDPhon__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCovidModel.FK__LichSuDie__IDBen__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCovidModel.FK__PhongDieu__IDKhu__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyCovidModel.FK__LichSuDie__IDNgu__5165187F" ManuallyRouted="false" />
+      <Diagram DiagramId="cd0da1261ed24891a92c9baa8ced62fb" Name="Diagram1" ZoomLevel="52">
+        <EntityTypeShape EntityType="QuanLyCovidModel.Account" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="QuanLyCovidModel.BenhNhan" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="QuanLyCovidModel.KhuVucDieuTri" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="QuanLyCovidModel.LichSuDieuTri" Width="1.5" PointX="7.5" PointY="1.625" />
+        <EntityTypeShape EntityType="QuanLyCovidModel.NguoiDieuTri" Width="1.5" PointX="5.25" PointY="5.5" />
+        <EntityTypeShape EntityType="QuanLyCovidModel.PhongDieuTri" Width="1.5" PointX="3" PointY="1.625" />
+        <AssociationConnector Association="QuanLyCovidModel.FK__BenhNhan__IDPhon__59FA5E80" />
+        <AssociationConnector Association="QuanLyCovidModel.FK__LichSuDie__IDBen__60A75C0F" />
+        <AssociationConnector Association="QuanLyCovidModel.FK__PhongDieu__IDKhu__52593CB8" />
+        <AssociationConnector Association="QuanLyCovidModel.FK__LichSuDie__IDNgu__619B8048" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

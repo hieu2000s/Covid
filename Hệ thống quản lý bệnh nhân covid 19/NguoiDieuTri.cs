@@ -24,8 +24,8 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
         public string TenNguoiDieuTri { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
         public System.DateTime NgaySinh { get; set; }
-        public int CMND { get; set; }
-        public Nullable<int> SDT { get; set; }
+        public string CMND { get; set; }
+        public string SDT { get; set; }
         public string DiaChi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

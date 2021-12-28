@@ -46,8 +46,19 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
         {
             if (MessageBox.Show("Bạn có muốn thoát??", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
             {
-                e.Cancel = true;
+
+                Application.Exit();
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbmk_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

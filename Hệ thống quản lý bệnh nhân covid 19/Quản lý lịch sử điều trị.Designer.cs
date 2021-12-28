@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lv = new System.Windows.Forms.ListView();
             this.lvstt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.idLsdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvmpdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvtkvdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvmt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,7 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.mtc = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
-            this.idLsdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             lvsoluong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +104,11 @@
             // 
             this.lvstt.Text = "STT";
             this.lvstt.Width = 35;
+            // 
+            // idLsdt
+            // 
+            this.idLsdt.Text = "Mã lịch sử điều trị";
+            this.idLsdt.Width = 136;
             // 
             // lvmpdt
             // 
@@ -199,6 +204,7 @@
             this.txbtg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbtg.Multiline = true;
             this.txbtg.Name = "txbtg";
+            this.txbtg.ReadOnly = true;
             this.txbtg.Size = new System.Drawing.Size(201, 29);
             this.txbtg.TabIndex = 28;
             // 
@@ -268,16 +274,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(517, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 17);
+            this.label1.Size = new System.Drawing.Size(287, 29);
             this.label1.TabIndex = 17;
             this.label1.Text = "Quản lý lịch sử điều trị";
-            // 
-            // idLsdt
-            // 
-            this.idLsdt.Text = "Mã lịch sử điều trị";
-            this.idLsdt.Width = 136;
             // 
             // Quản_lý_lịch_sử_điều_trị
             // 

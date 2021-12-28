@@ -89,7 +89,7 @@
             // 
             // lvttsk
             // 
-            this.lvttsk.Text = "Địa chỉ";
+            this.lvttsk.Text = "SĐT";
             this.lvttsk.Width = 239;
             // 
             // btndatetime
@@ -189,7 +189,7 @@
             // 
             // lvdc
             // 
-            this.lvdc.Text = "Số điện thoại";
+            this.lvdc.Text = "Địa chỉ";
             this.lvdc.Width = 135;
             // 
             // label7

@@ -19,7 +19,7 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
         public string MatKhau { get; set; }
         public Nullable<bool> Quyen { get; set; }
         public string TenNguoiNhap { get; set; }
-        public int CMND { get; set; }
-        public Nullable<int> Sdt { get; set; }
+        public string CMND { get; set; }
+        public string Sdt { get; set; }
     }
 }

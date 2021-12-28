@@ -64,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(507, 43);
+            this.label1.Location = new System.Drawing.Point(527, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 31);
             this.label1.TabIndex = 16;
@@ -156,7 +156,7 @@
             // 
             // txID
             // 
-            this.txID.Location = new System.Drawing.Point(161, 31);
+            this.txID.Location = new System.Drawing.Point(98, 258);
             this.txID.Multiline = true;
             this.txID.Name = "txID";
             this.txID.Size = new System.Drawing.Size(229, 29);

@@ -63,11 +63,11 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                     benhNhan.GioiTinh = rdbGtnam.Checked ? true : false;
                     benhNhan.NgaySinh = DateTime.Parse(txbNs.Text);
                     benhNhan.TenBenhNhan = txbTbn.Text;
-                    benhNhan.SDT = int.Parse(txbSdt.Text);
+                    benhNhan.SDT = txbSdt.Text;
                     benhNhan.TenNguoiGiamHo = txbTngh.Text;
                     benhNhan.Email = txbEmail.Text;
                     benhNhan.DiaChi = txbDc.Text;
-                    benhNhan.CMND = int.Parse(txbCmnd.Text);
+                    benhNhan.CMND = txbCmnd.Text;
                     benhNhan.TinhTrangSucKhoe = txbTtsk.Text;
                     benhNhan.IDPhongDieuTri = int.Parse(txbMpdt.Text);
                     db.BenhNhans.Add(benhNhan);
@@ -109,11 +109,11 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                     benhNhan.GioiTinh = rdbGtnam.Checked ? true : false;
                     benhNhan.NgaySinh = DateTime.Parse(txbNs.Text);
                     benhNhan.TenBenhNhan = txbTbn.Text;
-                    benhNhan.SDT = int.Parse(txbSdt.Text);
+                    benhNhan.SDT = txbSdt.Text;
                     benhNhan.TenNguoiGiamHo = txbTngh.Text;
                     benhNhan.Email = txbEmail.Text;
                     benhNhan.DiaChi = txbDc.Text;
-                    benhNhan.CMND = int.Parse(txbCmnd.Text);
+                    benhNhan.CMND = txbCmnd.Text;
                     benhNhan.TinhTrangSucKhoe = txbTtsk.Text;
                     benhNhan.IDPhongDieuTri = int.Parse(txbMpdt.Text);
                     db.Entry<BenhNhan>(benhNhan).State = (System.Data.Entity.EntityState)EntityState.Modified;
@@ -247,6 +247,29 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
             this.Hide();
             Main main = new Main();
             main.ShowDialog();
+        }
+
+        private void btnTk_Click(object sender, EventArgs e)
+        {
+            lv.Items.Clear();
+            List<BenhNhan> list = null;
+            if (txbTk.Text != string.Empty)
+            {
+                list = db.BenhNhans.Where(x => x.TenBenhNhan.ToString() == txbTk.Text).ToList();
+                if (list != null)
+                {
+                    hienthi(list);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập vào mã đọc giả.", "Nhắc nhở");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            hienthi();
         }
     }
 }

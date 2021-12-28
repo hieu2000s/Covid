@@ -33,7 +33,8 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
             if (kq == DialogResult.Yes)
             {
                 if (handler.UserData != null) 
-                { 
+                {
+                    this.Close();
                     handler.Logout();
                     this.Hide();
                     Đăng_nhập login = new Đăng_nhập();
@@ -98,7 +99,10 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            Main main = new Main();
+            main.Close();
+            //Đăng_nhập dn = new Đăng_nhập();
+            //dn.ShowDialog();
         }
     }
 }

@@ -9,8 +9,8 @@
     <Property Name="MatKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Quyen" Type="bit" />
     <Property Name="TenNguoiNhap" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="CMND" Type="int" Nullable="false" />
-    <Property Name="Sdt" Type="int" />
+    <Property Name="CMND" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sdt" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="BenhNhan">
     <Key>
@@ -20,11 +20,11 @@
     <Property Name="TenBenhNhan" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="NgaySinh" Type="date" Nullable="false" />
-    <Property Name="CMND" Type="int" />
+    <Property Name="CMND" Type="varchar" MaxLength="20" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
     <Property Name="TinhTrangSucKhoe" Type="nvarchar" MaxLength="1" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="20" />
-    <Property Name="SDT" Type="int" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" />
     <Property Name="TenNguoiGiamHo" Type="nvarchar" MaxLength="50" />
     <Property Name="IDPhongDieuTri" Type="int" />
   </EntityType>
@@ -54,8 +54,8 @@
     <Property Name="TenNguoiDieuTri" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="NgaySinh" Type="datetime" Nullable="false" />
-    <Property Name="CMND" Type="int" Nullable="false" />
-    <Property Name="SDT" Type="int" />
+    <Property Name="CMND" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="PhongDieuTri">
@@ -67,7 +67,7 @@
     <Property Name="IDKhuVucDieuTri" Type="int" />
     <Property Name="SoLuongGiuong" Type="int" />
   </EntityType>
-  <Association Name="FK__BenhNhan__IDPhon__4D94879B">
+  <Association Name="FK__BenhNhan__IDPhon__59FA5E80">
     <End Role="PhongDieuTri" Type="Self.PhongDieuTri" Multiplicity="0..1" />
     <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="*" />
     <ReferentialConstraint>
@@ -79,7 +79,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LichSuDie__IDBen__5070F446">
+  <Association Name="FK__LichSuDie__IDBen__60A75C0F">
     <End Role="BenhNhan" Type="Self.BenhNhan" Multiplicity="0..1" />
     <End Role="LichSuDieuTri" Type="Self.LichSuDieuTri" Multiplicity="*" />
     <ReferentialConstraint>
@@ -91,7 +91,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LichSuDie__IDNgu__5165187F">
+  <Association Name="FK__LichSuDie__IDNgu__619B8048">
     <End Role="NguoiDieuTri" Type="Self.NguoiDieuTri" Multiplicity="0..1" />
     <End Role="LichSuDieuTri" Type="Self.LichSuDieuTri" Multiplicity="*" />
     <ReferentialConstraint>
@@ -103,7 +103,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PhongDieu__IDKhu__45F365D3">
+  <Association Name="FK__PhongDieu__IDKhu__52593CB8">
     <End Role="KhuVucDieuTri" Type="Self.KhuVucDieuTri" Multiplicity="0..1" />
     <End Role="PhongDieuTri" Type="Self.PhongDieuTri" Multiplicity="*" />
     <ReferentialConstraint>
@@ -122,19 +122,19 @@
     <EntitySet Name="LichSuDieuTri" EntityType="Self.LichSuDieuTri" Schema="Covid" store:Type="Tables" />
     <EntitySet Name="NguoiDieuTri" EntityType="Self.NguoiDieuTri" Schema="Covid" store:Type="Tables" />
     <EntitySet Name="PhongDieuTri" EntityType="Self.PhongDieuTri" Schema="Covid" store:Type="Tables" />
-    <AssociationSet Name="FK__BenhNhan__IDPhon__4D94879B" Association="Self.FK__BenhNhan__IDPhon__4D94879B">
+    <AssociationSet Name="FK__BenhNhan__IDPhon__59FA5E80" Association="Self.FK__BenhNhan__IDPhon__59FA5E80">
       <End Role="PhongDieuTri" EntitySet="PhongDieuTri" />
       <End Role="BenhNhan" EntitySet="BenhNhan" />
     </AssociationSet>
-    <AssociationSet Name="FK__LichSuDie__IDBen__5070F446" Association="Self.FK__LichSuDie__IDBen__5070F446">
+    <AssociationSet Name="FK__LichSuDie__IDBen__60A75C0F" Association="Self.FK__LichSuDie__IDBen__60A75C0F">
       <End Role="BenhNhan" EntitySet="BenhNhan" />
       <End Role="LichSuDieuTri" EntitySet="LichSuDieuTri" />
     </AssociationSet>
-    <AssociationSet Name="FK__LichSuDie__IDNgu__5165187F" Association="Self.FK__LichSuDie__IDNgu__5165187F">
+    <AssociationSet Name="FK__LichSuDie__IDNgu__619B8048" Association="Self.FK__LichSuDie__IDNgu__619B8048">
       <End Role="NguoiDieuTri" EntitySet="NguoiDieuTri" />
       <End Role="LichSuDieuTri" EntitySet="LichSuDieuTri" />
     </AssociationSet>
-    <AssociationSet Name="FK__PhongDieu__IDKhu__45F365D3" Association="Self.FK__PhongDieu__IDKhu__45F365D3">
+    <AssociationSet Name="FK__PhongDieu__IDKhu__52593CB8" Association="Self.FK__PhongDieu__IDKhu__52593CB8">
       <End Role="KhuVucDieuTri" EntitySet="KhuVucDieuTri" />
       <End Role="PhongDieuTri" EntitySet="PhongDieuTri" />
     </AssociationSet>

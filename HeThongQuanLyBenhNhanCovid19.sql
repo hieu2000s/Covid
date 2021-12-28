@@ -21,8 +21,8 @@ CREATE TABLE Covid.NguoiDieuTri
 	,TenNguoiDieuTri NVARCHAR(50) NOT NULL
 	,GioiTinh BIT DEFAULT 0
 	,NgaySinh DATETIME NOT NULL
-	,CMND INT NOT NULL UNIQUE
-	,SDT INT UNIQUE
+	,CMND VARCHAR(20) NOT NULL UNIQUE
+	,SDT VARCHAR(20) UNIQUE
 	,DiaChi NVARCHAR(100)
 
 )
@@ -45,18 +45,16 @@ CREATE TABLE Covid.BenhNhan
 	,TenBenhNhan NVARCHAR(50) NOT NULL
 	,GioiTinh BIT DEFAULT 0
 	,NgaySinh DATE NOT NULL
-	,CMND INT UNIQUE
+	,CMND VARCHAR(20) UNIQUE
 	,DiaChi NVARCHAR(100)
 	,TinhTrangSucKhoe NVARCHAR NOT NULL DEFAULT 0
 	,Email NVARCHAR(20) UNIQUE
-	,SDT INT
+	,SDT VARCHAR(20)
 	,TenNguoiGiamHo NVARCHAR(50) DEFAULT N'Không có'
 	,IDPhongDieuTri INT
 	,FOREIGN KEY (IDPhongDieuTri) REFERENCES Covid.PhongDieuTri(IDPhongDieuTri)
 )
 GO
-
-
 
 CREATE TABLE Covid.Account
 (
@@ -65,15 +63,10 @@ CREATE TABLE Covid.Account
 	,MatKhau NVARCHAR(50) NOT NULL
 	,Quyen BIT DEFAULT 0
 	,TenNguoiNhap NVARCHAR(50) NOT NULL
-	,CMND INT NOT NULL UNIQUE
-	,Sdt INT
+	,CMND VARCHAR(20) NOT NULL UNIQUE
+	,Sdt VARCHAR(20)
 )
 GO
-INSERT Covid.Account(TenDangNhap,MatKhau, Quyen,TenNguoiNhap,CMND,Sdt) VALUES
-( 'hungdeptrai', 123456, 1,'Lê Nguyên Hưng', 123456, 096)
-
-Select * from Covid.Account
-delete from Covid.Account
 
 CREATE TABLE Covid.LichSuDieuTri
 (
@@ -87,7 +80,10 @@ CREATE TABLE Covid.LichSuDieuTri
 
 )
 GO
-select * from Covid.KhuVucDieuTri
+
+INSERT Covid.Account(TenDangNhap,MatKhau, Quyen,TenNguoiNhap,CMND,Sdt) VALUES
+( 'hungdeptrai', 123456, 1,'Lê Nguyên Hưng', 123456, 096)
+
 INSERT Covid.KhuVucDieuTri(TenKhuVucDieuTri, Mota) VALUES
 (N'Khu vực có bệnh nền nặng',N'Dành cho người có bệnh nền nặng') --id la 1
 ,(N'Khu vực có bệnh nền nhẹ',N'Dành cho người có bệnh nền nhẹ') --id la 2
@@ -105,8 +101,6 @@ INSERT Covid.PhongDieuTri(TenPhongDieuTri, IDKhuVucDieuTri,SoLuongGiuong) VALUES
 ,('Phong 303', 3, 10) --id la 3
 ,('Phong 401', 4, 10) --id la 4
 
-DELETE FROM Covid.BenhNhan
-DELETE FROM Covid.LichSuDieuTri
 INSERT Covid.BenhNhan(IDBenhNhan,TenBenhNhan ,GioiTinh, NgaySinh,CMND, DiaChi, TinhTrangSucKhoe, Email,SDT,TenNguoiGiamHo,IDPhongDieuTri) VALUES
 (1,N'Nguyễn Hữu Tú',1, CONVERT(DATETIME,12/03/1999,103),1,N'Hà Nội',1,'75222@gmail.com',09832602,N'Hưng',1) --id là 1
 
@@ -116,34 +110,6 @@ INSERT Covid.BenhNhan(IDBenhNhan,TenBenhNhan ,GioiTinh, NgaySinh,CMND, DiaChi, T
 INSERT Covid.BenhNhan(IDBenhNhan,TenBenhNhan ,GioiTinh, NgaySinh,CMND, DiaChi, TinhTrangSucKhoe, Email,SDT,TenNguoiGiamHo,IDPhongDieuTri) VALUES
 (6,N'Lê Nhật thần',1, CONVERT(DATETIME,12/03/2001,103) ,222223418,N'Hà Nội',1,'73222@gmail.com',098342602,N'Hăng',4)
 
-
-USE QuanLyCovid
-GO
-
-select * from Covid.BenhNhan
-select * from Covid.NguoiDieuTri
-select * from Covid.PhongDieuTri
-
-
-
-
 INSERT Covid.LichSuDieuTri(IDBenhNhan,IDNguoiDieuTri,ThoiGian,LichSuDieuTri) VALUES
 (1,1,CONVERT(DATETIME,15/03/2021,103),N'Tiêm 1 mũi vaxin, Bình thường')
 ,(2,2,CONVERT(DATETIME,12/11/2022,103),N'Tiêm 1 mũi vaxin, Sốc phản vệ')
-
-select count(IDBenhNhan) from Covid.BenhNhan where IDBenhNhan =15
-
-delete  from Covid.LichSuDieuTri
-delete  from Covid.NguoiDieuTri
-delete  from Covid.PhongDieuTri
-delete  from Covid.KhuVucDieuTri
-
-
-DROP TABLE Covid.KhuVucDieuTri
-DROP TABLE Covid.Account
-DROP TABLE Covid.NguoiDieuTri
-DROP TABLE Covid.PhongDieuTri
-DROP TABLE Covid.BenhNhan
-DROP TABLE Covid.LichSuDieuTri
-
-DROP DATABASE QuanLyCovid

@@ -65,9 +65,9 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                     nguoiDieuTri.GioiTinh = rdbGtnam.Checked ? true : false;
                     nguoiDieuTri.NgaySinh = DateTime.Parse(txbNs.Text);
                     nguoiDieuTri.TenNguoiDieuTri = txbTndt.Text;
-                    nguoiDieuTri.SDT = int.Parse(txbSdt.Text);
+                    nguoiDieuTri.SDT = txbSdt.Text;
                     nguoiDieuTri.DiaChi = txbDc.Text;
-                    nguoiDieuTri.CMND = int.Parse(txbCmnd.Text);
+                    nguoiDieuTri.CMND = txbCmnd.Text;
                     db.NguoiDieuTris.Add(nguoiDieuTri);
                     db.SaveChanges();
                     hienthi();
@@ -108,9 +108,9 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
                     nguoiDieuTri.GioiTinh = rdbGtnam.Checked ? true : false;
                     nguoiDieuTri.NgaySinh = DateTime.Parse(txbNs.Text);
                     nguoiDieuTri.TenNguoiDieuTri = txbTndt.Text;
-                    nguoiDieuTri.SDT = int.Parse(txbSdt.Text);
+                    nguoiDieuTri.SDT = txbSdt.Text;
                     nguoiDieuTri.DiaChi = txbDc.Text;
-                    nguoiDieuTri.CMND = int.Parse(txbCmnd.Text);
+                    nguoiDieuTri.CMND = txbCmnd.Text;
                     nguoiDieuTri.IDNguoiDieuTri = int.Parse(txbMndt.Text);
                     db.Entry<NguoiDieuTri>(nguoiDieuTri).State = (System.Data.Entity.EntityState)EntityState.Modified;
                     db.SaveChanges();

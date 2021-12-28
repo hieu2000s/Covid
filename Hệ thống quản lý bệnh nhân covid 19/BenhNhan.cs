@@ -24,11 +24,11 @@ namespace Hệ_thống_quản_lý_bệnh_nhân_covid_19
         public string TenBenhNhan { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
         public System.DateTime NgaySinh { get; set; }
-        public Nullable<int> CMND { get; set; }
+        public string CMND { get; set; }
         public string DiaChi { get; set; }
         public string TinhTrangSucKhoe { get; set; }
         public string Email { get; set; }
-        public Nullable<int> SDT { get; set; }
+        public string SDT { get; set; }
         public string TenNguoiGiamHo { get; set; }
         public Nullable<int> IDPhongDieuTri { get; set; }
     
